@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator
+from django.utils import timezone
 from .models import Blog
 from .forms import BlogPost
 
@@ -19,22 +20,26 @@ def create(request):
     if request.method == 'POST':
         form = BlogPost(request.POST, request.FILES)
         if form.is_valid():
-            post = form.save(commit=True)
+            new = form.save(commit=False)
+            new.pub_date = timezone.now()
+            new.save()
             return redirect('home')
-        return render(request, 'new.html', {'form':form})
     else:
         form = BlogPost()
         return render(request, 'new.html', {'form':form})
 
 def update (request, pk):
-    blog = get_object_or_404(Post, pk = pk)
-    form = BlogPost(request.POST,request.FILES, instance=blog)
-    if form.is_valid():
-        form.save()
-        return redirect('home')
-    return render(request, 'new.html', {'form':form})
+    blog = get_object_or_404(Blog, pk = pk)
+    if request.method == 'POST':
+        modify = BlogPost(request.POST, request.FILES, instance=blog)
+        if modify.is_valid():
+            modify.save()
+            return redirect('home')
+    else:
+        content=BlogPost(instance=blog)
+        return render(request, 'update.html', {'content':content})
 
 def delete (request, pk):
-    blog = get_object_or_404(Post, pk = pk)
+    blog = get_object_or_404(Blog, pk = pk)
     blog.delete()
     return redirect('home')
