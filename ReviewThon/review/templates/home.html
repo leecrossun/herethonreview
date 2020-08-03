@@ -28,7 +28,7 @@
         <div class="article">
             <div class="blogs">
                 {%for blog in posts%}
-                <div class="post" onclick="location.href='/detail/{{blog.id}}'">
+                <div class="post" onclick="location.href='/{{blog.id}}'">
                     <img src="{{blog.thumnail.url}}" class="thumnail" alt="thumnail">
                     <h2>{{blog.title}}</h2>
                     <p class="pub_date">{{blog.pub_date}}</p>
