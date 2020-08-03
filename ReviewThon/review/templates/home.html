@@ -22,7 +22,7 @@
 <center>
     <div class="blogs">
         {%for blog in posts%}
-        <div class="post">
+        <div class="post" onclick="location.href='/detail/{{blog.id}}'">
             <img src="{{blog.thumnail.url}}" class="thumnail" alt="thumnail">
             <h2>{{blog.title}}</h2>
             <p class="pub_date">{{blog.pub_date}}</p>
@@ -32,21 +32,20 @@
         {%endfor%}
     </div>
 
-
 <!--페이지네이션-->
 <div class="pagination">
-{%if posts.has_previous%}
-<a href="?page=1">First</a> &nbsp;
-<a href="?page={{posts.previous_page_number}}">Previous</a> &nbsp;
-{%endif%}
-<span>{{posts.number}}</span>
-<span>of</span>
-<span>{{posts.paginator.num_pages}}</span> &nbsp;
-
-{%if posts.has_next%}
-<a href="?page={{posts.next_page_number}}">Next</a>&nbsp;
-<a href="?page={{posts.paginator.num_pages}}">Last</a>
-{%endif%}
+    {%if posts.has_previous%}
+    <a href="?page=1">First</a> &nbsp;
+    <a href="?page={{posts.previous_page_number}}">Previous</a> &nbsp;
+    {%endif%}
+    <span>{{posts.number}}</span>
+    <span>of</span>
+    <span>{{posts.paginator.num_pages}}</span> &nbsp;
+    
+    {%if posts.has_next%}
+    <a href="?page={{posts.next_page_number}}">Next</a>&nbsp;
+    <a href="?page={{posts.paginator.num_pages}}">Last</a>
+    {%endif%}
 </div>
 <footer>
     <p class="f">&copy; 2020, 동덕여대 멋사 이효선, 백진영, 이혜준, 김세정</p>
