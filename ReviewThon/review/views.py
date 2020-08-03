@@ -5,7 +5,7 @@ from .models import Blog
 def home(request):
     data = Blog.objects
     datas = Blog.objects.all()
-    paginator = Paginator(datas,4)
+    paginator = Paginator(datas,3)
     page = request.GET.get('page')
     posts = paginator.get_page(page)
     return render(request, 'home.html', {'data':data, 'posts':posts})
