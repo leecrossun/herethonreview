@@ -1,1 +1,24 @@
 <h2>test</h2>
+
+<!--글을 띄우겠습니다-->
+{%for blog in posts%}
+<h2>{{blog.title}}</h2>
+<p>{{blog.pub_date}}</p>
+<img src="{{blog.image.url}}">
+<p>{{blog.sum}}</p> ...더보기
+
+{%endfor%}
+
+<!--페이지네이션-->
+{%if posts.has_previous%}
+<a href="?page=1">First</a> &nbsp;
+<a href="?page={{posts.previous_page_number}}">Previous</a> &nbsp;
+{%endif%}
+<span>{{posts.number}}</span>
+<span>of</span>
+<span>{{posts.paginator.num_pages}}</span> &nbsp;
+
+{%if posts.has_next%}
+<a href="?page={{posts.next_page_number}}">Next</a>&nbsp;
+<a href="?page={{posts.paginator.num_pages}}">Last</a>
+{%endif%}

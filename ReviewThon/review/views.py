@@ -1,5 +1,11 @@
 from django.shortcuts import render
+from django.core.paginator import Paginator
+from .models import Blog
 
-# Create your views here.
 def home(request):
-    return render(request, 'home.html')
+    data = Blog.objects
+    datas = Blog.objects.all()
+    paginator = Paginator(datas,4)
+    page = request.GET.get('page')
+    posts = paginator.get_page(page)
+    return render(request, 'home.html', {'data':data, 'posts':posts})
