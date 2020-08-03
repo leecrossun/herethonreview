@@ -1,17 +1,35 @@
-{% extends 'base.html' %}
 {% load static %}
 {% load socialaccount %}
 {% providers_media_js %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block content1 %}
-    <a class="btn-1" href="{% url 'home' %}">돌아가기</a>
-{% endblock content1 %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'style.css' %}?after" rel="stylesheet" type="text/css">
+    <title>Document</title>
+</head>
 
-{% block content2 %}
-<div class = "writeBox">
-    <h1>{{details.title}}</h1>
-    <p> {{details.writer}} | {{details.pub_date}}</p>
-    <img class="image" src="{{details.image.url}}"><br><br>
-    <h3 class ="box">{{details.body|linebreaksbr}}</h3>
-</div>
-{% endblock content2 %}
+<body>
+    <center>
+        <!-- 상단바 -->
+        <div class="nav">
+            <a class="btn-1" href="{% url 'home' %}">돌아가기</a>
+        </div>
+        <br>
+
+        <div class="writeBox">
+            <h1>{{details.title}}</h1>
+            <p> {{details.writer}} | {{details.pub_date}}</p>
+            <img class="image" src="{{details.image.url}}"><br><br>
+            <h3 class="box">{{details.body|linebreaksbr}}</h3>
+        </div>
+
+        <footer>
+            <p class="f">&copy; 2020, 동덕여대 멋사 이효선, 백진영, 이혜준, 김세정</p>
+        </footer>
+    </center>
+</body>
+
+</html>
