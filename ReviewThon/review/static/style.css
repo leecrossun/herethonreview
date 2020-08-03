@@ -94,6 +94,7 @@ body {
 
   .post:hover {
       background-color: rgba(246, 246, 246, 0.2);
+      cursor: pointer;
   }
 
   .thumnail {margin-top:10px;}
