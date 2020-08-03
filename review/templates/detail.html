@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
+
+{% block content1 %}
+    <a class="btn-1" href="{% url 'home' %}">돌아가기</a>
+{% endblock content1 %}
+
+{% block content2 %}
+<div class = "writeBox">
+    <h1>{{details.title}}</h1>
+    <p> {{details.writer}} | {{details.pub_date}}</p>
+    <img class="image" src="{{details.image.url}}"><br><br>
+    <h3 class ="box">{{details.body|linebreaksbr}}</h3>
+</div>
+{% endblock content2 %}
