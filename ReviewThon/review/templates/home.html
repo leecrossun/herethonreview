@@ -24,7 +24,7 @@
             <p class="pub_date">{{blog.pub_date}}</p>
             <p class="body">{{blog.sum}}<span class="more"><a href="{% url 'detail' blog.id %}"> ...더보기</a></span></p>
             <p class="writer">{{blog.writer}}님이 남긴 글입니다.</p>
-            <p class="btn" href="{% url 'update' blog.id %}">수정</p> <p class="btn" href="{% url 'delete' blog.id %}">삭제</p>
+            <a class="btn" href="{% url 'update' blog.id %}">수정</a> <a class="btn" href="{% url 'delete' blog.id %}">삭제</a>
         </div>
         {%endfor%}
     </div>
@@ -33,16 +33,16 @@
 <!--페이지네이션-->
 <div class="pagination">
     {%if posts.has_previous%}
-    <a href="?page=1">First</a> &nbsp;
-    <a href="?page={{posts.previous_page_number}}">Previous</a> &nbsp;
+    <a class="btn-1" href="?page=1">First</a> &nbsp;
+    <a class="btn-1" href="?page={{posts.previous_page_number}}">Previous</a> &nbsp;
     {%endif%}
     <span>{{posts.number}}</span>
     <span>of</span>
     <span>{{posts.paginator.num_pages}}</span> &nbsp;
 
     {%if posts.has_next%}
-    <a href="?page={{posts.next_page_number}}">Next</a>&nbsp;
-    <a href="?page={{posts.paginator.num_pages}}">Last</a>
+    <a class="btn-1" href="?page={{posts.next_page_number}}">Next</a>&nbsp;
+    <a class="btn-1" href="?page={{posts.paginator.num_pages}}">Last</a>
     {%endif%}
 </div>
 {% endblock content2 %}

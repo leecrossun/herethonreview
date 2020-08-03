@@ -88,6 +88,7 @@ body {
       margin: 15px;
       border-top: solid 1px white;
       border-bottom: solid 1px white;
+      padding: 5px 0px;
   }
 
   .post:hover {
@@ -123,5 +124,13 @@ footer {
 .writer {font-size: 12px;}
 
 .btn {
-  
+    display: inline;
+    font-size: 20px;
+    border: 1px solid white;
+    margin: 5px;
+}
+
+.btn:hover {
+    background-color: rgba(0, 0, 0, 0.212);
+    color:white;
 }
