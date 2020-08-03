@@ -1,5 +1,19 @@
-<h2>test</h2>
-
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'style.css' %}?after" rel="stylesheet" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+ <!-- 상단바    -->
+    <nav>
+        <button class="btn-1">로그인</button>
+        <button class="btn-1">글쓰기</button>
+        <button class="btn-1">로그아웃</button>
+    </nav>
 <!--글을 띄우겠습니다-->
 {%for blog in posts%}
 <h2>{{blog.title}}</h2>
@@ -23,3 +37,6 @@
 <a href="?page={{posts.next_page_number}}">Next</a>&nbsp;
 <a href="?page={{posts.paginator.num_pages}}">Last</a>
 {%endif%}
+  
+</body>
+</html>
