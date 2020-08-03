@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'BBTreeGR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeGR.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+} /*임시 폰트입니다!*/
+
 body {
     background: #2ecc71;
     font-size: 62.5%;
@@ -5,8 +12,6 @@ body {
   
   nav {
     padding: 2em;
-    height: 40px;
-    text-align: center;
   }
   
   /* GENERAL a STYLING */
@@ -23,7 +28,7 @@ body {
     border: 3px solid #fff;
     border-radius: 5px;
     color: #fff;
-    display: inline-block;
+    display: block;
     font-size: 1.6em;
     font-weight: bold;
     margin: 1em auto;
@@ -55,3 +60,53 @@ body {
   .btn-1:hover:after {
     height: 100%;
   }
+
+
+  /*posts*/
+
+  .blogs {
+      height: 400px;
+      width: 1000px;
+      font-family: 'BBTreeGR';
+  }
+
+  .post {
+      height: 330px;
+      width: 300px;
+      float: left;
+      margin: 15px;
+      border-top: solid 1px white;
+      border-bottom: solid 1px white;
+  }
+
+  .post:hover {
+      background-color: rgba(246, 246, 246, 0.2);
+  }
+
+  .thumnail {margin-top:10px;}
+
+  .more {color:#747474;}
+
+  .body {
+      min-height: 50px;
+      font-size: 13px;
+      margin: 10px;
+      line-height:16px;
+    }
+
+.pagination {
+    font-size: 13px;
+    margin-bottom: 100px;
+}
+
+footer {
+    width:1000px;
+    text-align: left;
+    font-size: 13px;
+    border-top: solid 1px white;
+    font-family: 'BBTreeGR';
+}
+
+.f {padding: 20px;}
+
+.writer {font-size: 12px;}

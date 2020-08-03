@@ -7,6 +7,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{% static 'style.css' %}?after" rel="stylesheet" type="text/css">
+    
+
     <title>Document</title>
 </head>
 <body>
@@ -19,28 +21,41 @@
         <a href="{% provider_login_url 'google' %}" class="btn-1">로그인</a>
         {% endif %}
     </nav>
-<!--글을 띄우겠습니다-->
-{%for blog in posts%}
-<h2>{{blog.title}}</h2>
-<p>{{blog.pub_date}}</p>
-<img src="{{blog.image.url}}">
-<p>{{blog.sum}}</p> ...더보기
+    <br><br>
 
-{%endfor%}
+<!--posts-->
+<center>
+    <div class="blogs">
+        {%for blog in posts%}
+        <div class="post" onclick="location.href='/detail/{{blog.id}}'">
+            <img src="{{blog.thumnail.url}}" class="thumnail" alt="thumnail">
+            <h2>{{blog.title}}</h2>
+            <p class="pub_date">{{blog.pub_date}}</p>
+            <p class="body">{{blog.sum}}<span class="more"> ...더보기</span></p>
+            <p class="writer">{{blog.writer}}님이 남긴 글입니다.</p>
+        </div>
+        {%endfor%}
+    </div>
 
 <!--페이지네이션-->
-{%if posts.has_previous%}
-<a href="?page=1">First</a> &nbsp;
-<a href="?page={{posts.previous_page_number}}">Previous</a> &nbsp;
-{%endif%}
-<span>{{posts.number}}</span>
-<span>of</span>
-<span>{{posts.paginator.num_pages}}</span> &nbsp;
+<div class="pagination">
+    {%if posts.has_previous%}
+    <a href="?page=1">First</a> &nbsp;
+    <a href="?page={{posts.previous_page_number}}">Previous</a> &nbsp;
+    {%endif%}
+    <span>{{posts.number}}</span>
+    <span>of</span>
+    <span>{{posts.paginator.num_pages}}</span> &nbsp;
+    
+    {%if posts.has_next%}
+    <a href="?page={{posts.next_page_number}}">Next</a>&nbsp;
+    <a href="?page={{posts.paginator.num_pages}}">Last</a>
+    {%endif%}
+</div>
+<footer>
+    <p class="f">&copy; 2020, 동덕여대 멋사 이효선, 백진영, 이혜준, 김세정</p>
+</footer>
+</center>
 
-{%if posts.has_next%}
-<a href="?page={{posts.next_page_number}}">Next</a>&nbsp;
-<a href="?page={{posts.paginator.num_pages}}">Last</a>
-{%endif%}
-  
 </body>
 </html>
