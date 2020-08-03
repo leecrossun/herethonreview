@@ -14,4 +14,4 @@ class Blog(models.Model):
         return self.title
 
     def sum(self):
-        return self.body[:100]
+        return self.body[:50]

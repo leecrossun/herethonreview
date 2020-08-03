@@ -8,6 +8,7 @@
 body {
     background: #2ecc71;
     font-size: 62.5%;
+    word-break: break-all;
   }
   
   .nav {
@@ -123,6 +124,34 @@ footer {
 
 .writer {font-size: 12px;}
 
+
+.image {
+  width: 350px;
+  height: 250px;
+}
+
+.writeBox {
+  background-color: rgba(86, 212, 139, 1);
+  width: 550px;
+  height: auto;
+  padding: 20px;
+  border-top: solid 1px white;
+  border-bottom: solid 1px white;
+  margin: 15px 15px 30px 15px;
+}
+
+h1 {
+  font-size: 25px;
+}
+
+h3 {
+  font-size: 15px;
+}
+
+.box {
+  width: 500px;
+  word-break: break-all;
+
 .btn {
     display: inline;
     font-size: 20px;
@@ -133,4 +162,5 @@ footer {
 .btn:hover {
     background-color: rgba(0, 0, 0, 0.212);
     color:white;
+
 }
