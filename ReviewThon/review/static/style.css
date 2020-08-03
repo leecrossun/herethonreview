@@ -10,8 +10,9 @@ body {
     font-size: 62.5%;
   }
   
-  nav {
+  .nav {
     padding: 2em;
+    height: 120px;
   }
   
   /* GENERAL a STYLING */
@@ -28,13 +29,14 @@ body {
     border: 3px solid #fff;
     border-radius: 5px;
     color: #fff;
-    display: block;
+    display: inline-block;
     font-size: 1.6em;
     font-weight: bold;
     margin: 1em auto;
     padding: 2em 6em;
     position: relative;
     text-transform: uppercase;
+    height: 30px;
   }
   
   a::before,
@@ -68,6 +70,10 @@ body {
       height: 400px;
       width: 1000px;
       font-family: 'BBTreeGR';
+  }
+
+  .article {
+    display: block;
   }
 
   .post {
