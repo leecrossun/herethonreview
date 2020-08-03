@@ -27,7 +27,7 @@ def create(request):
         return render(request, 'new.html', {'form':form})
 
 def update (request, pk):
-    blog = get_object_or_404(Post, pk = pk)
+    blog = get_object_or_404(Blog, pk = pk)
     form = BlogPost(request.POST,request.FILES, instance=blog)
     if form.is_valid():
         form.save()
@@ -35,6 +35,6 @@ def update (request, pk):
     return render(request, 'new.html', {'form':form})
 
 def delete (request, pk):
-    blog = get_object_or_404(Post, pk = pk)
+    blog = get_object_or_404(Blog, pk = pk)
     blog.delete()
     return redirect('home')
