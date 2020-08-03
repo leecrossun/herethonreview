@@ -1,15 +1,40 @@
 {% load static %}
-<br>
-<div class="card">
-    <h1>Modify your Image</h1>
-    <form method="POST" enctype="multipart/form-data" novalidate>
-        {% csrf_token %} 
-        <tabel>
-            {{content.as_p}}
-        </tabel>
+{% load socialaccount %}
+{% providers_media_js %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'style.css' %}?after" rel="stylesheet" type="text/css">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <!-- 상단바 -->
+        <div class="nav">
+            <a class="btn-1" href="{% url 'home' %}">돌아가기</a>
+        </div>
         <br>
-        <input type="submit" value="제출하기">
-    </form>
-</div>
+
+        <div class="card">
+            <h1>Modify your Image</h1>
+            <form method="POST" enctype="multipart/form-data" novalidate>
+                {% csrf_token %}
+                <tabel>
+                    {{content.as_p}}
+                </tabel>
+                <br>
+                <input type="submit" value="제출하기">
+            </form>
+        </div>
+        <footer>
+            <p class="f">&copy; 2020, 동덕여대 멋사 이효선, 백진영, 이혜준, 김세정</p>
+        </footer>
+    </center>
+
 </body>
+
 </html>
