@@ -14,16 +14,16 @@ body {
     padding: 2em;
   }
   
-  /* GENERAL BUTTON STYLING */
-  button,
-  button::after {
+  /* GENERAL a STYLING */
+  a,
+  a::after {
     -webkit-transition: all 0.3s;
       -moz-transition: all 0.3s;
     -o-transition: all 0.3s;
       transition: all 0.3s;
   }
   
-  button {
+  a {
     background: none;
     border: 3px solid #fff;
     border-radius: 5px;
@@ -37,15 +37,15 @@ body {
     text-transform: uppercase;
   }
   
-  button::before,
-  button::after {
+  a::before,
+  a::after {
     background: #fff;
     content: '';
     position: absolute;
     z-index: -1;
   }
   
-  button:hover {
+  a:hover {
     color: #2ecc71;
   }
   
