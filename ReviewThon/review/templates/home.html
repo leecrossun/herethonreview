@@ -1,4 +1,6 @@
 {% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,9 +12,12 @@
 <body>
  <!-- 상단바    -->
     <nav>
-        <button class="btn-1">로그인</button>
-        <button class="btn-1">글쓰기</button>
-        <button class="btn-1">로그아웃</button>
+        {% if user.is_authenticated %}
+        <a href="/accounts/logout" class="btn-1">로그아웃</a>
+        <a class="btn-1">글쓰기</a>
+        {% else %}
+        <a href="{% provider_login_url 'google' %}" class="btn-1">로그인</a>
+        {% endif %}
     </nav>
 <!--글을 띄우겠습니다-->
 {%for blog in posts%}
