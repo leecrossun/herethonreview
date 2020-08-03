@@ -30,7 +30,6 @@ def create(request):
 
 def update (request, pk):
     blog = get_object_or_404(Blog, pk = pk)
-<<<<<<< HEAD
     if request.method == 'POST':
         modify = BlogPost(request.POST, request.FILES, instance=blog)
         if modify.is_valid():
@@ -39,13 +38,6 @@ def update (request, pk):
     else:
         content=BlogPost(instance=blog)
         return render(request, 'update.html', {'content':content})
-=======
-    form = BlogPost(request.POST,request.FILES, instance=blog)
-    if form.is_valid():
-        form.save()
-        return redirect('home')
-    return render(request, 'new.html', {'form':form})
->>>>>>> 335e6880620f410cd546a8e9d19ad4197d26acd4
 
 def delete (request, pk):
     blog = get_object_or_404(Blog, pk = pk)
