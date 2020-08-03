@@ -1,0 +1,34 @@
+{% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'style.css' %}?after" rel="stylesheet" type="text/css">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <!-- 상단바 -->
+        <div class="nav">
+            {% block content1 %}
+            {% endblock content1 %}
+        </div>
+        <hr>
+        <br>
+
+        {% block content2 %}
+        {% endblock content2 %}
+
+        <footer>
+            <p class="f">&copy; 2020, 동덕여대 멋사 이효선, 백진영, 이혜준, 김세정</p>
+        </footer>
+    </center>
+
+</body>
+
+</html>
