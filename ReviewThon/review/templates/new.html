@@ -1,0 +1,15 @@
+{% load static %}
+<br>
+<div class="card">
+    <h1>Upload your Image</h1>
+    <form method="POST" enctype="multipart/form-data" novalidate>
+        {% csrf_token %} 
+        <tabel>
+            {{form.as_p}}
+        </tabel>
+        <br>
+        <input type="submit" value="제출하기">
+    </form>
+</div>
+</body>
+</html>

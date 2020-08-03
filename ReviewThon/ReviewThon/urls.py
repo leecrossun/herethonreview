@@ -8,5 +8,9 @@ from django.conf.urls import include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', review.views.home, name="home"),
+    path('<int:blog_id>/', review.views.detail, name="detail"),
+    path('new/', review.views.create, name="new"),
+    path('update/<int:pk>', review.views.update, name='update'),
+    path('delete/<int:pk>', review.views.delete, name="delete"),
     path('accounts/', include('allauth.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
