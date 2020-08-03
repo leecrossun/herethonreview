@@ -13,4 +13,5 @@ urlpatterns = [
     path('update/<int:pk>', review.views.update, name='update'),
     path('delete/<int:pk>', review.views.delete, name="delete"),
     path('accounts/', include('allauth.urls')),
+    path('<int:blog_id>', review.views.detail, name="detail"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

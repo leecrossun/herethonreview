@@ -12,7 +12,7 @@ def home(request):
     return render(request, 'home.html', {'data':data, 'posts':posts})
 
 def detail(request, blog_id):
-    details = get_object_or_404(Post, pk=blog_id)
+    details = get_object_or_404(Blog, pk = blog_id)
     return render(request, 'detail.html', {'details':details})
 
 def create(request):
