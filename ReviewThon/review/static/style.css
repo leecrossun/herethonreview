@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'BBTreeGR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeGR.woff') format('woff');
+    font-weight: normal; font-style: normal;
+} /*임시 폰트입니다!*/
+
 body {
     background: #2ecc71;
     font-size: 62.5%;
@@ -60,6 +66,7 @@ body {
   .blogs {
       height: 400px;
       width: 1000px;
+      font-family: 'BBTreeGR';
   }
 
   .post {
@@ -81,16 +88,22 @@ body {
 
   .body {
       min-height: 50px;
-      font-size: 12px;
+      font-size: 13px;
       margin: 10px;
+      line-height:16px;
     }
 
-.pagination {margin-bottom: 100px;}
+.pagination {
+    font-size: 13px;
+    margin-bottom: 100px;
+}
 
 footer {
     width:1000px;
     text-align: left;
     font-size: 13px;
+    border-top: solid 1px white;
+    font-family: 'BBTreeGR';
 }
 
 .f {padding: 20px;}
