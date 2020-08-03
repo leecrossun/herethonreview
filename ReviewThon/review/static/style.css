@@ -14,16 +14,16 @@ body {
     padding: 2em;
   }
   
-  /* GENERAL a STYLING */
-  a,
-  a::after {
+  /* GENERAL BUTTON STYLING */
+  button,
+  button::after {
     -webkit-transition: all 0.3s;
       -moz-transition: all 0.3s;
     -o-transition: all 0.3s;
       transition: all 0.3s;
   }
   
-  a {
+  button {
     background: none;
     border: 3px solid #fff;
     border-radius: 5px;
@@ -37,15 +37,15 @@ body {
     text-transform: uppercase;
   }
   
-  a::before,
-  a::after {
+  button::before,
+  button::after {
     background: #fff;
     content: '';
     position: absolute;
     z-index: -1;
   }
   
-  a:hover {
+  button:hover {
     color: #2ecc71;
   }
   
@@ -94,7 +94,7 @@ body {
       line-height:16px;
     }
 
-.pagination {
+.pagination1 {
     font-size: 13px;
     margin-bottom: 100px;
 }
