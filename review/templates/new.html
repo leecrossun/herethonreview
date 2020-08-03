@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content1 %}
+    <a class="btn-1" href="{% url 'home' %}">돌아가기</a>
+{% endblock content1 %}
+
+{% block content2 %} 
+<br>
+<div class="writeBox">
+    <h1>Upload your Image</h1>
+    <form method="POST" enctype="multipart/form-data" novalidate>
+        {% csrf_token %} 
+        <tabel>
+            {{form.as_p}}
+        </tabel>
+        <br>
+        <input type="submit" value="제출하기">
+    </form>
+</div>
+<br><br>
+
+{% endblock content2 %}
